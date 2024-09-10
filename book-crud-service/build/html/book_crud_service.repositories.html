@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>book_crud_service.repositories package &mdash; Book CRUD Service 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=01f34227"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="book_crud_service.rest package" href="book_crud_service.rest.html" />
+    <link rel="prev" title="book_crud_service.models.sqlalchemy package" href="book_crud_service.models.sqlalchemy.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Book CRUD Service
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="book_crud_service.html">book_crud_service package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="book_crud_service.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="book_crud_service.data_access.html">book_crud_service.data_access package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="book_crud_service.models.html">book_crud_service.models package</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">book_crud_service.repositories package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-book_crud_service.repositories.base">book_crud_service.repositories.base module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-book_crud_service.repositories.book_repository">book_crud_service.repositories.book_repository module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-book_crud_service.repositories.review_repository">book_crud_service.repositories.review_repository module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-book_crud_service.repositories">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="book_crud_service.rest.html">book_crud_service.rest package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="book_crud_service.service.html">book_crud_service.service package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="book_crud_service.temp.html">book_crud_service.temp package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="book_crud_service.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="book_crud_service.html#module-book_crud_service.db">book_crud_service.db module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="book_crud_service.html#module-book_crud_service.main">book_crud_service.main module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="book_crud_service.html#module-book_crud_service">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Book CRUD Service</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="book_crud_service.html">book_crud_service package</a></li>
+      <li class="breadcrumb-item active">book_crud_service.repositories package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/book_crud_service.repositories.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="book-crud-service-repositories-package">
+<h1>book_crud_service.repositories package<a class="headerlink" href="#book-crud-service-repositories-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-book_crud_service.repositories.base">
+<span id="book-crud-service-repositories-base-module"></span><h2>book_crud_service.repositories.base module<a class="headerlink" href="#module-book_crud_service.repositories.base" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="book_crud_service.repositories.base.BaseRepository">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">book_crud_service.repositories.base.</span></span><span class="sig-name descname"><span class="pre">BaseRepository</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><span class="pre">T</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">AsyncSession</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/book_crud_service/repositories/base.html#BaseRepository"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#book_crud_service.repositories.base.BaseRepository" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Generic</span></code>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">T</span></code>]</p>
+<p>A generic repository class for handling common database operations.</p>
+<p>This class provides basic CRUD (Create, Read, Update, Delete) functionality for any model.
+It operates asynchronously with SQLAlchemy’s <cite>AsyncSession</cite> to perform database operations.</p>
+<p>Attributes:
+- model (Type[T]): The SQLAlchemy model type this repository is operating on.
+- session (AsyncSession): The SQLAlchemy asynchronous session used for database operations.</p>
+<p>Methods:
+- get(id): Fetch a single record by its ID.
+- get_all(): Fetch all records of the model.
+- create(obj_in): Add a new record to the database.
+- update(id, obj_in): Perform a full update of an existing record by replacing all fields.
+- patch(id, obj_in): Perform a partial update of an existing record by updating only the provided fields.
+- delete(id): Delete a record by its ID.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="book_crud_service.repositories.base.BaseRepository.create">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_in</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">T</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">T</span></span></span><a class="reference internal" href="_modules/book_crud_service/repositories/base.html#BaseRepository.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#book_crud_service.repositories.base.BaseRepository.create" title="Link to this definition"></a></dt>
+<dd><p>Add a new record to the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj_in</strong> – The model instance to be added.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The newly created record, after the transaction is committed and refreshed.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="book_crud_service.repositories.base.BaseRepository.delete">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/book_crud_service/repositories/base.html#BaseRepository.delete"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#book_crud_service.repositories.base.BaseRepository.delete" title="Link to this definition"></a></dt>
+<dd><p>Delete a record by its ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>id</strong> – The primary key of the record to delete.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="book_crud_service.repositories.base.BaseRepository.get">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">T</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference internal" href="_modules/book_crud_service/repositories/base.html#BaseRepository.get"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#book_crud_service.repositories.base.BaseRepository.get" title="Link to this definition"></a></dt>
+<dd><p>Fetch a single record by its ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>id</strong> – The primary key of the record to fetch.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The record if found, otherwise None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="book_crud_service.repositories.base.BaseRepository.get_all">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">T</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/book_crud_service/repositories/base.html#BaseRepository.get_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#book_crud_service.repositories.base.BaseRepository.get_all" title="Link to this definition"></a></dt>
+<dd><p>Fetch all records for the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A list of all records in the table.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="book_crud_service.repositories.base.BaseRepository.patch">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">patch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj_in</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">T</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference internal" href="_modules/book_crud_service/repositories/base.html#BaseRepository.patch"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#book_crud_service.repositories.base.BaseRepository.patch" title="Link to this definition"></a></dt>
+<dd><p>Perform a partial update of an existing record by updating only the provided fields.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> – The primary key of the record to patch.</p></li>
+<li><p><strong>obj_in</strong> – A dictionary containing the fields to be updated.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The updated record, or None if no record was found.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="book_crud_service.repositories.base.BaseRepository.update">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj_in</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">T</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference internal" href="_modules/book_crud_service/repositories/base.html#BaseRepository.update"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#book_crud_service.repositories.base.BaseRepository.update" title="Link to this definition"></a></dt>
+<dd><p>Perform a full update of an existing record by replacing all fields.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> – The primary key of the record to update.</p></li>
+<li><p><strong>obj_in</strong> – A dictionary containing the updated field values.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The updated record, or None if no record was found.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-book_crud_service.repositories.book_repository">
+<span id="book-crud-service-repositories-book-repository-module"></span><h2>book_crud_service.repositories.book_repository module<a class="headerlink" href="#module-book_crud_service.repositories.book_repository" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="book_crud_service.repositories.book_repository.BookRepository">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">book_crud_service.repositories.book_repository.</span></span><span class="sig-name descname"><span class="pre">BookRepository</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">AsyncSession</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/book_crud_service/repositories/book_repository.html#BookRepository"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#book_crud_service.repositories.book_repository.BookRepository" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#book_crud_service.repositories.base.BaseRepository" title="book_crud_service.repositories.base.BaseRepository"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseRepository</span></code></a>[<a class="reference internal" href="book_crud_service.models.sqlalchemy.html#book_crud_service.models.sqlalchemy.book.Book" title="book_crud_service.models.sqlalchemy.book.Book"><code class="xref py py-class docutils literal notranslate"><span class="pre">Book</span></code></a>]</p>
+<p>Repository class for managing book-related database operations.</p>
+<p>This class extends the generic <cite>BaseRepository</cite> and is specific to the <cite>Book</cite> model. It provides
+the same CRUD functionality as <cite>BaseRepository</cite> but is tailored to handle books.</p>
+<p>Attributes:
+- session (AsyncSession): The SQLAlchemy asynchronous session used for database operations.</p>
+<p>Methods:
+- Inherits all CRUD methods from <cite>BaseRepository</cite>, including:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>get(id): Fetch a book by its ID.</p></li>
+<li><p>get_all(): Fetch all books.</p></li>
+<li><p>create(obj_in): Add a new book to the database.</p></li>
+<li><p>update(id, obj_in): Update an existing book’s details.</p></li>
+<li><p>patch(id, obj_in): Partially update an existing book’s details.</p></li>
+<li><p>delete(id): Delete a book by its ID.</p></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+</section>
+<section id="module-book_crud_service.repositories.review_repository">
+<span id="book-crud-service-repositories-review-repository-module"></span><h2>book_crud_service.repositories.review_repository module<a class="headerlink" href="#module-book_crud_service.repositories.review_repository" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="book_crud_service.repositories.review_repository.ReviewRepository">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">book_crud_service.repositories.review_repository.</span></span><span class="sig-name descname"><span class="pre">ReviewRepository</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">AsyncSession</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/book_crud_service/repositories/review_repository.html#ReviewRepository"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#book_crud_service.repositories.review_repository.ReviewRepository" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#book_crud_service.repositories.base.BaseRepository" title="book_crud_service.repositories.base.BaseRepository"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseRepository</span></code></a>[<a class="reference internal" href="book_crud_service.models.sqlalchemy.html#book_crud_service.models.sqlalchemy.review.Review" title="book_crud_service.models.sqlalchemy.review.Review"><code class="xref py py-class docutils literal notranslate"><span class="pre">Review</span></code></a>]</p>
+<p>Repository class for managing review-related database operations.</p>
+<p>This class extends the generic <cite>BaseRepository</cite> and is specific to the <cite>Review</cite> model. It provides
+CRUD functionality and additional methods tailored for handling reviews.</p>
+<p>Attributes:
+- session (AsyncSession): The SQLAlchemy asynchronous session used for database operations.</p>
+<p>Methods:
+- Inherits all CRUD methods from <cite>BaseRepository</cite>, including:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>get(id): Fetch a review by its ID.</p></li>
+<li><p>get_all(): Fetch all reviews.</p></li>
+<li><p>create(obj_in): Add a new review to the database.</p></li>
+<li><p>update(id, obj_in): Update an existing review’s details.</p></li>
+<li><p>patch(id, obj_in): Partially update an existing review’s details.</p></li>
+<li><p>delete(id): Delete a review by its ID.</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>get_all(book_id): Fetch all reviews for a specific book by filtering on the book_id.</p></li>
+</ul>
+<dl class="py method">
+<dt class="sig sig-object py" id="book_crud_service.repositories.review_repository.ReviewRepository.get_all">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">book_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="book_crud_service.models.sqlalchemy.html#book_crud_service.models.sqlalchemy.review.Review" title="book_crud_service.models.sqlalchemy.review.Review"><span class="pre">Review</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/book_crud_service/repositories/review_repository.html#ReviewRepository.get_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#book_crud_service.repositories.review_repository.ReviewRepository.get_all" title="Link to this definition"></a></dt>
+<dd><p>Fetch all reviews for a specific book by filtering on the book_id.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>book_id</strong> – The ID of the book whose reviews are to be fetched.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of <cite>Review</cite> objects associated with the given book.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-book_crud_service.repositories">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-book_crud_service.repositories" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="book_crud_service.models.sqlalchemy.html" class="btn btn-neutral float-left" title="book_crud_service.models.sqlalchemy package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="book_crud_service.rest.html" class="btn btn-neutral float-right" title="book_crud_service.rest package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Manish Lalwani.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

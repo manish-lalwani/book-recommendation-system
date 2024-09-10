@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>book_crud_service package &mdash; Book CRUD Service 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=01f34227"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="book_crud_service.data_access package" href="book_crud_service.data_access.html" />
+    <link rel="prev" title="Welcome to Book CRUD Service’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Book CRUD Service
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">book_crud_service package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="book_crud_service.data_access.html">book_crud_service.data_access package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="book_crud_service.models.html">book_crud_service.models package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="book_crud_service.repositories.html">book_crud_service.repositories package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="book_crud_service.rest.html">book_crud_service.rest package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="book_crud_service.service.html">book_crud_service.service package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="book_crud_service.temp.html">book_crud_service.temp package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-book_crud_service.db">book_crud_service.db module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#book_crud_service.db.create_tables"><code class="docutils literal notranslate"><span class="pre">create_tables()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#book_crud_service.db.get_db"><code class="docutils literal notranslate"><span class="pre">get_db()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-book_crud_service.main">book_crud_service.main module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#book_crud_service.main.on_startup"><code class="docutils literal notranslate"><span class="pre">on_startup()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-book_crud_service">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Book CRUD Service</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">book_crud_service package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/book_crud_service.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="book-crud-service-package">
+<h1>book_crud_service package<a class="headerlink" href="#book-crud-service-package" title="Link to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="book_crud_service.data_access.html">book_crud_service.data_access package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="book_crud_service.data_access.html#module-book_crud_service.data_access">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="book_crud_service.models.html">book_crud_service.models package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="book_crud_service.models.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="book_crud_service.models.pydantic_.html">book_crud_service.models.pydantic_ package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="book_crud_service.models.pydantic_.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="book_crud_service.models.pydantic_.html#module-book_crud_service.models.pydantic_.base">book_crud_service.models.pydantic_.base module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="book_crud_service.models.pydantic_.html#module-book_crud_service.models.pydantic_.book">book_crud_service.models.pydantic_.book module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="book_crud_service.models.pydantic_.html#module-book_crud_service.models.pydantic_.review">book_crud_service.models.pydantic_.review module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="book_crud_service.models.pydantic_.html#module-book_crud_service.models.pydantic_">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="book_crud_service.models.sqlalchemy.html">book_crud_service.models.sqlalchemy package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="book_crud_service.models.sqlalchemy.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="book_crud_service.models.sqlalchemy.html#module-book_crud_service.models.sqlalchemy.audit_mixin">book_crud_service.models.sqlalchemy.audit_mixin module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="book_crud_service.models.sqlalchemy.html#module-book_crud_service.models.sqlalchemy.base">book_crud_service.models.sqlalchemy.base module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="book_crud_service.models.sqlalchemy.html#module-book_crud_service.models.sqlalchemy.book">book_crud_service.models.sqlalchemy.book module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="book_crud_service.models.sqlalchemy.html#module-book_crud_service.models.sqlalchemy.review">book_crud_service.models.sqlalchemy.review module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="book_crud_service.models.sqlalchemy.html#module-book_crud_service.models.sqlalchemy">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="book_crud_service.models.html#module-book_crud_service.models">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="book_crud_service.repositories.html">book_crud_service.repositories package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="book_crud_service.repositories.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="book_crud_service.repositories.html#module-book_crud_service.repositories.base">book_crud_service.repositories.base module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="book_crud_service.repositories.html#book_crud_service.repositories.base.BaseRepository"><code class="docutils literal notranslate"><span class="pre">BaseRepository</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="book_crud_service.repositories.html#book_crud_service.repositories.base.BaseRepository.create"><code class="docutils literal notranslate"><span class="pre">BaseRepository.create()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="book_crud_service.repositories.html#book_crud_service.repositories.base.BaseRepository.delete"><code class="docutils literal notranslate"><span class="pre">BaseRepository.delete()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="book_crud_service.repositories.html#book_crud_service.repositories.base.BaseRepository.get"><code class="docutils literal notranslate"><span class="pre">BaseRepository.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="book_crud_service.repositories.html#book_crud_service.repositories.base.BaseRepository.get_all"><code class="docutils literal notranslate"><span class="pre">BaseRepository.get_all()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="book_crud_service.repositories.html#book_crud_service.repositories.base.BaseRepository.patch"><code class="docutils literal notranslate"><span class="pre">BaseRepository.patch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="book_crud_service.repositories.html#book_crud_service.repositories.base.BaseRepository.update"><code class="docutils literal notranslate"><span class="pre">BaseRepository.update()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="book_crud_service.repositories.html#module-book_crud_service.repositories.book_repository">book_crud_service.repositories.book_repository module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="book_crud_service.repositories.html#book_crud_service.repositories.book_repository.BookRepository"><code class="docutils literal notranslate"><span class="pre">BookRepository</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="book_crud_service.repositories.html#module-book_crud_service.repositories.review_repository">book_crud_service.repositories.review_repository module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="book_crud_service.repositories.html#book_crud_service.repositories.review_repository.ReviewRepository"><code class="docutils literal notranslate"><span class="pre">ReviewRepository</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="book_crud_service.repositories.html#book_crud_service.repositories.review_repository.ReviewRepository.get_all"><code class="docutils literal notranslate"><span class="pre">ReviewRepository.get_all()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="book_crud_service.repositories.html#module-book_crud_service.repositories">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="book_crud_service.rest.html">book_crud_service.rest package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="book_crud_service.rest.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="book_crud_service.rest.api.html">book_crud_service.rest.api package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="book_crud_service.rest.api.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="book_crud_service.rest.api.html#module-book_crud_service.rest.api.book_controller">book_crud_service.rest.api.book_controller module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="book_crud_service.rest.api.html#module-book_crud_service.rest.api.common_error">book_crud_service.rest.api.common_error module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="book_crud_service.rest.api.html#module-book_crud_service.rest.api.review_controller">book_crud_service.rest.api.review_controller module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="book_crud_service.rest.api.html#module-book_crud_service.rest.api">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="book_crud_service.rest.openapi.html">book_crud_service.rest.openapi package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="book_crud_service.rest.openapi.html#module-book_crud_service.rest.openapi">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="book_crud_service.rest.html#module-book_crud_service.rest">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="book_crud_service.service.html">book_crud_service.service package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="book_crud_service.service.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="book_crud_service.service.html#module-book_crud_service.service.book_service">book_crud_service.service.book_service module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="book_crud_service.service.html#book_crud_service.service.book_service.BookService"><code class="docutils literal notranslate"><span class="pre">BookService</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="book_crud_service.service.html#book_crud_service.service.book_service.BookService.create_book"><code class="docutils literal notranslate"><span class="pre">BookService.create_book()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="book_crud_service.service.html#book_crud_service.service.book_service.BookService.delete_book"><code class="docutils literal notranslate"><span class="pre">BookService.delete_book()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="book_crud_service.service.html#book_crud_service.service.book_service.BookService.get_all_books"><code class="docutils literal notranslate"><span class="pre">BookService.get_all_books()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="book_crud_service.service.html#book_crud_service.service.book_service.BookService.get_book_by_id"><code class="docutils literal notranslate"><span class="pre">BookService.get_book_by_id()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="book_crud_service.service.html#book_crud_service.service.book_service.BookService.patch_book"><code class="docutils literal notranslate"><span class="pre">BookService.patch_book()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="book_crud_service.service.html#book_crud_service.service.book_service.BookService.update_book"><code class="docutils literal notranslate"><span class="pre">BookService.update_book()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="book_crud_service.service.html#module-book_crud_service.service.review_service">book_crud_service.service.review_service module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="book_crud_service.service.html#book_crud_service.service.review_service.ReviewService"><code class="docutils literal notranslate"><span class="pre">ReviewService</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="book_crud_service.service.html#book_crud_service.service.review_service.ReviewService.create_review"><code class="docutils literal notranslate"><span class="pre">ReviewService.create_review()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="book_crud_service.service.html#book_crud_service.service.review_service.ReviewService.delete_review"><code class="docutils literal notranslate"><span class="pre">ReviewService.delete_review()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="book_crud_service.service.html#book_crud_service.service.review_service.ReviewService.get_all_reviews_for_book"><code class="docutils literal notranslate"><span class="pre">ReviewService.get_all_reviews_for_book()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="book_crud_service.service.html#book_crud_service.service.review_service.ReviewService.get_review_by_id"><code class="docutils literal notranslate"><span class="pre">ReviewService.get_review_by_id()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="book_crud_service.service.html#book_crud_service.service.review_service.ReviewService.update_review"><code class="docutils literal notranslate"><span class="pre">ReviewService.update_review()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="book_crud_service.service.html#module-book_crud_service.service">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="book_crud_service.temp.html">book_crud_service.temp package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="book_crud_service.temp.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="book_crud_service.temp.html#book-crud-service-temp-llm-main-module">book_crud_service.temp.llm_main module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="book_crud_service.temp.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-book_crud_service.db">
+<span id="book-crud-service-db-module"></span><h2>book_crud_service.db module<a class="headerlink" href="#module-book_crud_service.db" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="book_crud_service.db.create_tables">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">book_crud_service.db.</span></span><span class="sig-name descname"><span class="pre">create_tables</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/book_crud_service/db.html#create_tables"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#book_crud_service.db.create_tables" title="Link to this definition"></a></dt>
+<dd><p>Function to create all database tables defined in the SQLAlchemy models.</p>
+<p>This function uses the engine to run a synchronous creation of tables, defined in
+the <cite>Base</cite> metadata, asynchronously.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="book_crud_service.db.get_db">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">book_crud_service.db.</span></span><span class="sig-name descname"><span class="pre">get_db</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">AsyncSession</span></span></span><a class="reference internal" href="_modules/book_crud_service/db.html#get_db"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#book_crud_service.db.get_db" title="Link to this definition"></a></dt>
+<dd><p>Dependency function to provide a database session to API routes.</p>
+<p>This function yields an instance of <cite>AsyncSession</cite> which will be used to interact
+with the database. The session is automatically closed once the request is completed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Yield<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An instance of <cite>AsyncSession</cite> bound to the database engine.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-book_crud_service.main">
+<span id="book-crud-service-main-module"></span><h2>book_crud_service.main module<a class="headerlink" href="#module-book_crud_service.main" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="book_crud_service.main.on_startup">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">book_crud_service.main.</span></span><span class="sig-name descname"><span class="pre">on_startup</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/book_crud_service/main.html#on_startup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#book_crud_service.main.on_startup" title="Link to this definition"></a></dt>
+<dd><p>Event handler that runs on application startup.</p>
+<p>This function ensures that the necessary database tables are created when
+the application starts.</p>
+</dd></dl>
+
+</section>
+<section id="module-book_crud_service">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-book_crud_service" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Book CRUD Service’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="book_crud_service.data_access.html" class="btn btn-neutral float-right" title="book_crud_service.data_access package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Manish Lalwani.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

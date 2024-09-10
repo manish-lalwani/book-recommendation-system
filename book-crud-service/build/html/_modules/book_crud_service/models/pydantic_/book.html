@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>book_crud_service.models.pydantic_.book &mdash; Book CRUD Service 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=01f34227"></script>
+        <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html" class="icon icon-home">
+            Book CRUD Service
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../book_crud_service.html">book_crud_service package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Book CRUD Service</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">book_crud_service.models.pydantic_.book</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for book_crud_service.models.pydantic_.book</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+<span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">ConfigDict</span>
+<span class="kn">from</span> <span class="nn">book_crud_service.models.pydantic_.base</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">AuditResponseModel</span><span class="p">,</span>
+    <span class="n">AuditUpdateModel</span><span class="p">,</span>
+    <span class="n">AuditCreateModel</span><span class="p">,</span>
+<span class="p">)</span>
+
+
+<span class="c1"># Model for Output (response)</span>
+<div class="viewcode-block" id="BookResponseModel">
+<a class="viewcode-back" href="../../../../book_crud_service.models.pydantic_.html#book_crud_service.models.pydantic_.book.BookResponseModel">[docs]</a>
+<span class="k">class</span> <span class="nc">BookResponseModel</span><span class="p">(</span><span class="n">AuditResponseModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Pydantic model for the response containing book data.</span>
+
+<span class="sd">    This model is used when returning book data to the client. It includes audit-related fields</span>
+<span class="sd">    (created_by, created_on, etc.) from the `AuditResponseModel`.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">    - id (int): The unique identifier for the book.</span>
+<span class="sd">    - title (str): The title of the book.</span>
+<span class="sd">    - author (str): The author of the book.</span>
+<span class="sd">    - genre (Optional[str]): The genre of the book (optional).</span>
+<span class="sd">    - year_published (Optional[int]): The year the book was published (optional).</span>
+<span class="sd">    - summary (Optional[str]): A brief summary of the book (optional).</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">    {</span>
+<span class="sd">        &quot;created_by&quot;: &quot;admin&quot;,</span>
+<span class="sd">        &quot;created_on&quot;: &quot;2024-09-07T12:31:37.056382Z&quot;,</span>
+<span class="sd">        &quot;id&quot;: 1,</span>
+<span class="sd">        &quot;title&quot;: &quot;The Great Adventure&quot;,</span>
+<span class="sd">        &quot;author&quot;: &quot;John Doe&quot;,</span>
+<span class="sd">        &quot;genre&quot;: &quot;Fiction&quot;,</span>
+<span class="sd">        &quot;year_published&quot;: 2020,</span>
+<span class="sd">        &quot;summary&quot;: &quot;An epic journey of self-discovery and adventure.&quot;</span>
+<span class="sd">    }</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="nb">id</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">title</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">author</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">genre</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">year_published</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">summary</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="n">model_config</span> <span class="o">=</span> <span class="n">ConfigDict</span><span class="p">(</span>
+        <span class="n">json_schema_extra</span><span class="o">=</span><span class="p">{</span>
+            <span class="s2">&quot;example&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;created_by&quot;</span><span class="p">:</span> <span class="s2">&quot;admin&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;created_on&quot;</span><span class="p">:</span> <span class="s2">&quot;2024-09-07T12:31:37.056382Z&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;The Great Adventure&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;John Doe&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;genre&quot;</span><span class="p">:</span> <span class="s2">&quot;Fiction&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;year_published&quot;</span><span class="p">:</span> <span class="mi">2020</span><span class="p">,</span>
+                <span class="s2">&quot;summary&quot;</span><span class="p">:</span> <span class="s2">&quot;An epic journey of self-discovery and adventure.&quot;</span><span class="p">,</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">)</span></div>
+
+
+
+<span class="c1"># Model for Input (create)</span>
+<div class="viewcode-block" id="BookCreateModel">
+<a class="viewcode-back" href="../../../../book_crud_service.models.pydantic_.html#book_crud_service.models.pydantic_.book.BookCreateModel">[docs]</a>
+<span class="k">class</span> <span class="nc">BookCreateModel</span><span class="p">(</span><span class="n">AuditCreateModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Pydantic model for creating a new book.</span>
+
+<span class="sd">    This model is used for input when creating a new book. It extends the `AuditCreateModel`,</span>
+<span class="sd">    which handles audit fields (created_by, etc.).</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">    - title (str): The title of the book.</span>
+<span class="sd">    - author (str): The author of the book.</span>
+<span class="sd">    - genre (Optional[str]): The genre of the book (optional).</span>
+<span class="sd">    - year_published (Optional[int]): The year the book was published (optional).</span>
+<span class="sd">    - summary (Optional[str]): A brief summary of the book (optional).</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">    {</span>
+<span class="sd">        &quot;title&quot;: &quot;The Great Adventure&quot;,</span>
+<span class="sd">        &quot;author&quot;: &quot;John Doe&quot;,</span>
+<span class="sd">        &quot;genre&quot;: &quot;Fiction&quot;,</span>
+<span class="sd">        &quot;year_published&quot;: 2020,</span>
+<span class="sd">        &quot;summary&quot;: &quot;An epic journey of self-discovery and adventure.&quot;,</span>
+<span class="sd">        &quot;created_by&quot;: &quot;admin&quot;</span>
+<span class="sd">    }</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">title</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">author</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">genre</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">year_published</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">summary</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="n">model_config</span> <span class="o">=</span> <span class="n">ConfigDict</span><span class="p">(</span>
+        <span class="n">json_schema_extra</span><span class="o">=</span><span class="p">{</span>
+            <span class="s2">&quot;example&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;The Great Adventure&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;John Doe&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;genre&quot;</span><span class="p">:</span> <span class="s2">&quot;Fiction&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;year_published&quot;</span><span class="p">:</span> <span class="mi">2020</span><span class="p">,</span>
+                <span class="s2">&quot;summary&quot;</span><span class="p">:</span> <span class="s2">&quot;An epic journey of self-discovery and adventure.&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;created_by&quot;</span><span class="p">:</span> <span class="s2">&quot;admin&quot;</span><span class="p">,</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">)</span></div>
+
+
+
+<span class="c1"># Model for Input (full update via PUT)</span>
+<div class="viewcode-block" id="BookUpdateModel">
+<a class="viewcode-back" href="../../../../book_crud_service.models.pydantic_.html#book_crud_service.models.pydantic_.book.BookUpdateModel">[docs]</a>
+<span class="k">class</span> <span class="nc">BookUpdateModel</span><span class="p">(</span><span class="n">AuditUpdateModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Pydantic model for updating a book via a full PUT request.</span>
+
+<span class="sd">    This model is used for input when updating all the fields of an existing book. It extends</span>
+<span class="sd">    the `AuditUpdateModel`, which handles audit fields (last_modified_by, etc.).</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">    - title (str): The title of the book.</span>
+<span class="sd">    - author (str): The author of the book.</span>
+<span class="sd">    - genre (Optional[str]): The genre of the book (optional).</span>
+<span class="sd">    - year_published (Optional[int]): The year the book was published (optional).</span>
+<span class="sd">    - summary (Optional[str]): A brief summary of the book (optional).</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">    {</span>
+<span class="sd">        &quot;title&quot;: &quot;The Great Adventure: Updated Edition&quot;,</span>
+<span class="sd">        &quot;author&quot;: &quot;John Doe&quot;,</span>
+<span class="sd">        &quot;genre&quot;: &quot;Adventure&quot;,</span>
+<span class="sd">        &quot;year_published&quot;: 2021,</span>
+<span class="sd">        &quot;summary&quot;: &quot;An updated edition of the epic journey of self-discovery.&quot;,</span>
+<span class="sd">        &quot;last_modified_by&quot;: &quot;admin&quot;</span>
+<span class="sd">    }</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">title</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">author</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">genre</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">year_published</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">summary</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="n">model_config</span> <span class="o">=</span> <span class="n">ConfigDict</span><span class="p">(</span>
+        <span class="n">json_schema_extra</span><span class="o">=</span><span class="p">{</span>
+            <span class="s2">&quot;example&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;The Great Adventure: Updated Edition&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;John Doe&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;genre&quot;</span><span class="p">:</span> <span class="s2">&quot;Adventure&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;year_published&quot;</span><span class="p">:</span> <span class="mi">2021</span><span class="p">,</span>
+                <span class="s2">&quot;summary&quot;</span><span class="p">:</span> <span class="s2">&quot;An updated edition of the epic journey of self-discovery.&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;last_modified_by&quot;</span><span class="p">:</span> <span class="s2">&quot;admin&quot;</span><span class="p">,</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">)</span></div>
+
+
+
+<span class="c1"># Model for Input (partial update via PATCH)</span>
+<div class="viewcode-block" id="BookPatchModel">
+<a class="viewcode-back" href="../../../../book_crud_service.models.pydantic_.html#book_crud_service.models.pydantic_.book.BookPatchModel">[docs]</a>
+<span class="k">class</span> <span class="nc">BookPatchModel</span><span class="p">(</span><span class="n">AuditUpdateModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Pydantic model for partially updating a book via a PATCH request.</span>
+
+<span class="sd">    This model is used for input when updating selected fields of an existing book. It extends</span>
+<span class="sd">    the `AuditUpdateModel`, which handles audit fields (last_modified_by, etc.).</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">    - title (Optional[str]): The title of the book (optional).</span>
+<span class="sd">    - author (Optional[str]): The author of the book (optional).</span>
+<span class="sd">    - genre (Optional[str]): The genre of the book (optional).</span>
+<span class="sd">    - year_published (Optional[int]): The year the book was published (optional).</span>
+<span class="sd">    - summary (Optional[str]): A brief summary of the book (optional).</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">    {</span>
+<span class="sd">        &quot;year_published&quot;: 2021,</span>
+<span class="sd">        &quot;last_modified_by&quot;: &quot;admin&quot;</span>
+<span class="sd">    }</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">title</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">author</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">genre</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">year_published</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">summary</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="n">model_config</span> <span class="o">=</span> <span class="n">ConfigDict</span><span class="p">(</span>
+        <span class="n">json_schema_extra</span><span class="o">=</span><span class="p">{</span>
+            <span class="s2">&quot;example&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;year_published&quot;</span><span class="p">:</span> <span class="mi">2021</span><span class="p">,</span> <span class="s2">&quot;last_modified_by&quot;</span><span class="p">:</span> <span class="s2">&quot;admin&quot;</span><span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">)</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Manish Lalwani.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

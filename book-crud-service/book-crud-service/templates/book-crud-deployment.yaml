@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  namespace: book-recommendation-system
+  labels:
+    app: book-crud-deploy
+  name: book-crud-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: book-crud-deploy
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: book-crud-deploy
+    spec:
+      containers:
+      - image: manishl23/book-crud-service:v0.1.2
+        name: book-crud-service
+        resources: {}
+        envFrom:
+        - configMapRef:
+            name: postgresdb-config
+status: {}

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>book_crud_service.rest.api.review_controller &mdash; Book CRUD Service 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=01f34227"></script>
+        <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html" class="icon icon-home">
+            Book CRUD Service
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../book_crud_service.html">book_crud_service package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Book CRUD Service</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">book_crud_service.rest.api.review_controller</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for book_crud_service.rest.api.review_controller</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+<span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">APIRouter</span><span class="p">,</span> <span class="n">Depends</span><span class="p">,</span> <span class="n">HTTPException</span>
+<span class="kn">from</span> <span class="nn">sqlalchemy.ext.asyncio</span> <span class="kn">import</span> <span class="n">AsyncSession</span>
+<span class="kn">from</span> <span class="nn">book_crud_service.db</span> <span class="kn">import</span> <span class="n">get_db</span>
+<span class="kn">from</span> <span class="nn">book_crud_service.service.review_service</span> <span class="kn">import</span> <span class="n">ReviewService</span>
+<span class="kn">from</span> <span class="nn">book_crud_service.models.pydantic_.review</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">ReviewCreateModel</span><span class="p">,</span>
+    <span class="n">ReviewUpdateModel</span><span class="p">,</span>
+    <span class="n">ReviewResponseModel</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">book_crud_service.rest.api.common_error</span> <span class="kn">import</span> <span class="n">common_error_responses</span>
+
+<span class="n">router</span> <span class="o">=</span> <span class="n">APIRouter</span><span class="p">()</span>
+
+
+<span class="c1"># Create a new review</span>
+<div class="viewcode-block" id="create_review">
+<a class="viewcode-back" href="../../../../book_crud_service.rest.api.html#book_crud_service.rest.api.review_controller.create_review">[docs]</a>
+<span class="nd">@router</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="s2">&quot;/books/</span><span class="si">{book_id}</span><span class="s2">/reviews&quot;</span><span class="p">,</span>
+    <span class="n">response_model</span><span class="o">=</span><span class="n">ReviewResponseModel</span><span class="p">,</span>
+    <span class="n">status_code</span><span class="o">=</span><span class="mi">201</span><span class="p">,</span>
+    <span class="n">responses</span><span class="o">=</span><span class="n">common_error_responses</span><span class="p">(),</span>
+<span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">create_review</span><span class="p">(</span>
+    <span class="n">book_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">review</span><span class="p">:</span> <span class="n">ReviewCreateModel</span><span class="p">,</span> <span class="n">session</span><span class="p">:</span> <span class="n">AsyncSession</span> <span class="o">=</span> <span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">)</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    API endpoint to create a new review for a book.</span>
+
+<span class="sd">    This endpoint accepts a Pydantic model `ReviewCreateModel` which contains details for creating</span>
+<span class="sd">    a new review, such as user ID, review text, and rating. The review is associated with a specific</span>
+<span class="sd">    book by its ID and is processed by the `ReviewService`.</span>
+
+<span class="sd">    :param book_id: The ID of the book for which the review is being created.</span>
+<span class="sd">    :param review: The Pydantic model (ReviewCreateModel) containing review details.</span>
+<span class="sd">    :param session: Database session, automatically injected via FastAPI&#39;s dependency injection.</span>
+<span class="sd">    :return: The created review data.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">review_service</span> <span class="o">=</span> <span class="n">ReviewService</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
+    <span class="c1"># Pass the Pydantic model and book_id to the service layer</span>
+    <span class="n">created_review</span> <span class="o">=</span> <span class="k">await</span> <span class="n">review_service</span><span class="o">.</span><span class="n">create_review</span><span class="p">(</span><span class="n">book_id</span><span class="p">,</span> <span class="n">review</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">created_review</span></div>
+
+
+
+<span class="c1"># Get all reviews for a specific book</span>
+<div class="viewcode-block" id="get_all_reviews">
+<a class="viewcode-back" href="../../../../book_crud_service.rest.api.html#book_crud_service.rest.api.review_controller.get_all_reviews">[docs]</a>
+<span class="nd">@router</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="s2">&quot;/books/</span><span class="si">{book_id}</span><span class="s2">/reviews&quot;</span><span class="p">,</span>
+    <span class="n">response_model</span><span class="o">=</span><span class="n">List</span><span class="p">[</span><span class="n">ReviewResponseModel</span><span class="p">],</span>
+    <span class="n">responses</span><span class="o">=</span><span class="n">common_error_responses</span><span class="p">(),</span>
+<span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">get_all_reviews</span><span class="p">(</span><span class="n">book_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">session</span><span class="p">:</span> <span class="n">AsyncSession</span> <span class="o">=</span> <span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">)):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    API endpoint to retrieve all reviews for a specific book.</span>
+
+<span class="sd">    This endpoint fetches all the reviews for a particular book, identified by the book&#39;s ID.</span>
+<span class="sd">    The reviews are processed and retrieved using the `ReviewService`.</span>
+
+<span class="sd">    :param book_id: The ID of the book whose reviews are being fetched.</span>
+<span class="sd">    :param session: Database session.</span>
+<span class="sd">    :return: A list of reviews for the given book.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">review_service</span> <span class="o">=</span> <span class="n">ReviewService</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
+    <span class="n">reviews</span> <span class="o">=</span> <span class="k">await</span> <span class="n">review_service</span><span class="o">.</span><span class="n">get_all_reviews_for_book</span><span class="p">(</span><span class="n">book_id</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">reviews</span></div>
+
+
+
+<span class="c1"># Update a review by ID</span>
+<div class="viewcode-block" id="update_review">
+<a class="viewcode-back" href="../../../../book_crud_service.rest.api.html#book_crud_service.rest.api.review_controller.update_review">[docs]</a>
+<span class="nd">@router</span><span class="o">.</span><span class="n">put</span><span class="p">(</span>
+    <span class="s2">&quot;/reviews/</span><span class="si">{review_id}</span><span class="s2">&quot;</span><span class="p">,</span>
+    <span class="n">response_model</span><span class="o">=</span><span class="n">ReviewResponseModel</span><span class="p">,</span>
+    <span class="n">responses</span><span class="o">=</span><span class="n">common_error_responses</span><span class="p">(),</span>
+<span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">update_review</span><span class="p">(</span>
+    <span class="n">review_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">review_data</span><span class="p">:</span> <span class="n">ReviewUpdateModel</span><span class="p">,</span>
+    <span class="n">session</span><span class="p">:</span> <span class="n">AsyncSession</span> <span class="o">=</span> <span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">),</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    API endpoint to fully update a review.</span>
+
+<span class="sd">    This endpoint updates a specific review based on the provided review ID and new review data.</span>
+<span class="sd">    The review data is provided as a `ReviewUpdateModel`, which may include updated review text and rating.</span>
+<span class="sd">    If the review is not found, a 404 error is raised.</span>
+
+<span class="sd">    :param review_id: The ID of the review to update.</span>
+<span class="sd">    :param review_data: The Pydantic model (ReviewUpdateModel) containing the updated review data.</span>
+<span class="sd">    :param session: Database session.</span>
+<span class="sd">    :return: The updated review data, or a 404 error if the review is not found.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">review_service</span> <span class="o">=</span> <span class="n">ReviewService</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
+    <span class="n">updated_review</span> <span class="o">=</span> <span class="k">await</span> <span class="n">review_service</span><span class="o">.</span><span class="n">update_review</span><span class="p">(</span><span class="n">review_id</span><span class="p">,</span> <span class="n">review_data</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">updated_review</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">HTTPException</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="mi">404</span><span class="p">,</span> <span class="n">detail</span><span class="o">=</span><span class="s2">&quot;Review not found&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">updated_review</span></div>
+
+
+
+<span class="c1"># Delete a review by ID</span>
+<div class="viewcode-block" id="delete_review">
+<a class="viewcode-back" href="../../../../book_crud_service.rest.api.html#book_crud_service.rest.api.review_controller.delete_review">[docs]</a>
+<span class="nd">@router</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span>
+    <span class="s2">&quot;/reviews/</span><span class="si">{review_id}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">status_code</span><span class="o">=</span><span class="mi">204</span><span class="p">,</span> <span class="n">responses</span><span class="o">=</span><span class="n">common_error_responses</span><span class="p">()</span>
+<span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">delete_review</span><span class="p">(</span><span class="n">review_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">session</span><span class="p">:</span> <span class="n">AsyncSession</span> <span class="o">=</span> <span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">)):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    API endpoint to delete a review by its ID.</span>
+
+<span class="sd">    This endpoint deletes a specific review from the database based on its unique ID. If the review is not found,</span>
+<span class="sd">    the deletion will still return a 204 status (no content).</span>
+
+<span class="sd">    :param review_id: The ID of the review to delete.</span>
+<span class="sd">    :param session: Database session.</span>
+<span class="sd">    :return: None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">review_service</span> <span class="o">=</span> <span class="n">ReviewService</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
+    <span class="k">await</span> <span class="n">review_service</span><span class="o">.</span><span class="n">delete_review</span><span class="p">(</span><span class="n">review_id</span><span class="p">)</span>
+    <span class="k">return</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Manish Lalwani.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

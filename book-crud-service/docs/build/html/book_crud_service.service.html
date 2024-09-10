@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>book_crud_service.service package &#8212; Book CRUD Service 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=12dfc556" />
+    <script src="_static/documentation_options.js?v=01f34227"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="book_crud_service.temp package" href="book_crud_service.temp.html" />
+    <link rel="prev" title="book_crud_service.rest.openapi package" href="book_crud_service.rest.openapi.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="book-crud-service-service-package">
+<h1>book_crud_service.service package<a class="headerlink" href="#book-crud-service-service-package" title="Link to this heading">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-book_crud_service.service.book_service">
+<span id="book-crud-service-service-book-service-module"></span><h2>book_crud_service.service.book_service module<a class="headerlink" href="#module-book_crud_service.service.book_service" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="book_crud_service.service.book_service.BookService">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">book_crud_service.service.book_service.</span></span><span class="sig-name descname"><span class="pre">BookService</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">AsyncSession</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/book_crud_service/service/book_service.html#BookService"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#book_crud_service.service.book_service.BookService" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="book_crud_service.service.book_service.BookService.create_book">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_book</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">book_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="book_crud_service.models.pydantic_.html#book_crud_service.models.pydantic_.book.BookCreateModel" title="book_crud_service.models.pydantic_.book.BookCreateModel"><span class="pre">BookCreateModel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="book_crud_service.models.sqlalchemy.html#book_crud_service.models.sqlalchemy.book.Book" title="book_crud_service.models.sqlalchemy.book.Book"><span class="pre">Book</span></a></span></span><a class="reference internal" href="_modules/book_crud_service/service/book_service.html#BookService.create_book"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#book_crud_service.service.book_service.BookService.create_book" title="Link to this definition">¶</a></dt>
+<dd><p>Create a new book in the repository.
+- book_data: Pydantic model (BookCreateModel) containing the book data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="book_crud_service.service.book_service.BookService.delete_book">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">delete_book</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">book_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/book_crud_service/service/book_service.html#BookService.delete_book"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#book_crud_service.service.book_service.BookService.delete_book" title="Link to this definition">¶</a></dt>
+<dd><p>Delete a book by its ID from the repository.
+- book_id: The ID of the book to delete.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="book_crud_service.service.book_service.BookService.get_all_books">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_all_books</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="book_crud_service.models.sqlalchemy.html#book_crud_service.models.sqlalchemy.book.Book" title="book_crud_service.models.sqlalchemy.book.Book"><span class="pre">Book</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/book_crud_service/service/book_service.html#BookService.get_all_books"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#book_crud_service.service.book_service.BookService.get_all_books" title="Link to this definition">¶</a></dt>
+<dd><p>Fetch all books from the repository.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="book_crud_service.service.book_service.BookService.get_book_by_id">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_book_by_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">book_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="book_crud_service.models.sqlalchemy.html#book_crud_service.models.sqlalchemy.book.Book" title="book_crud_service.models.sqlalchemy.book.Book"><span class="pre">Book</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference internal" href="_modules/book_crud_service/service/book_service.html#BookService.get_book_by_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#book_crud_service.service.book_service.BookService.get_book_by_id" title="Link to this definition">¶</a></dt>
+<dd><p>Fetch a single book by its ID from the repository.
+- book_id: The ID of the book to retrieve.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="book_crud_service.service.book_service.BookService.patch_book">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">patch_book</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">book_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">book_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="book_crud_service.models.pydantic_.html#book_crud_service.models.pydantic_.book.BookPatchModel" title="book_crud_service.models.pydantic_.book.BookPatchModel"><span class="pre">BookPatchModel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="book_crud_service.models.sqlalchemy.html#book_crud_service.models.sqlalchemy.book.Book" title="book_crud_service.models.sqlalchemy.book.Book"><span class="pre">Book</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference internal" href="_modules/book_crud_service/service/book_service.html#BookService.patch_book"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#book_crud_service.service.book_service.BookService.patch_book" title="Link to this definition">¶</a></dt>
+<dd><p>Partial update of a book in the repository.
+- book_id: The ID of the book to patch.
+- book_data: Pydantic model (BookPatchModel) containing the fields to be updated.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="book_crud_service.service.book_service.BookService.update_book">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">update_book</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">book_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">book_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="book_crud_service.models.pydantic_.html#book_crud_service.models.pydantic_.book.BookUpdateModel" title="book_crud_service.models.pydantic_.book.BookUpdateModel"><span class="pre">BookUpdateModel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="book_crud_service.models.sqlalchemy.html#book_crud_service.models.sqlalchemy.book.Book" title="book_crud_service.models.sqlalchemy.book.Book"><span class="pre">Book</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference internal" href="_modules/book_crud_service/service/book_service.html#BookService.update_book"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#book_crud_service.service.book_service.BookService.update_book" title="Link to this definition">¶</a></dt>
+<dd><p>Update an existing book in the repository.
+- book_id: The ID of the book to update.
+- book_data: Pydantic model (BookUpdateModel) containing the updated data.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-book_crud_service.service.review_service">
+<span id="book-crud-service-service-review-service-module"></span><h2>book_crud_service.service.review_service module<a class="headerlink" href="#module-book_crud_service.service.review_service" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="book_crud_service.service.review_service.ReviewService">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">book_crud_service.service.review_service.</span></span><span class="sig-name descname"><span class="pre">ReviewService</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">AsyncSession</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/book_crud_service/service/review_service.html#ReviewService"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#book_crud_service.service.review_service.ReviewService" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="book_crud_service.service.review_service.ReviewService.create_review">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_review</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">book_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">review_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="book_crud_service.models.pydantic_.html#book_crud_service.models.pydantic_.review.ReviewCreateModel" title="book_crud_service.models.pydantic_.review.ReviewCreateModel"><span class="pre">ReviewCreateModel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="book_crud_service.models.sqlalchemy.html#book_crud_service.models.sqlalchemy.review.Review" title="book_crud_service.models.sqlalchemy.review.Review"><span class="pre">Review</span></a></span></span><a class="reference internal" href="_modules/book_crud_service/service/review_service.html#ReviewService.create_review"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#book_crud_service.service.review_service.ReviewService.create_review" title="Link to this definition">¶</a></dt>
+<dd><p>Create a new review in the repository.
+- book_id: The ID of the book associated with the review.
+- review_data: The Pydantic model (ReviewCreateModel) containing review data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="book_crud_service.service.review_service.ReviewService.delete_review">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">delete_review</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">review_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/book_crud_service/service/review_service.html#ReviewService.delete_review"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#book_crud_service.service.review_service.ReviewService.delete_review" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="book_crud_service.service.review_service.ReviewService.get_all_reviews_for_book">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_all_reviews_for_book</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">book_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="book_crud_service.models.sqlalchemy.html#book_crud_service.models.sqlalchemy.review.Review" title="book_crud_service.models.sqlalchemy.review.Review"><span class="pre">Review</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/book_crud_service/service/review_service.html#ReviewService.get_all_reviews_for_book"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#book_crud_service.service.review_service.ReviewService.get_all_reviews_for_book" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="book_crud_service.service.review_service.ReviewService.get_review_by_id">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_review_by_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">review_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="book_crud_service.models.sqlalchemy.html#book_crud_service.models.sqlalchemy.review.Review" title="book_crud_service.models.sqlalchemy.review.Review"><span class="pre">Review</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference internal" href="_modules/book_crud_service/service/review_service.html#ReviewService.get_review_by_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#book_crud_service.service.review_service.ReviewService.get_review_by_id" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="book_crud_service.service.review_service.ReviewService.update_review">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">update_review</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">review_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">review_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="book_crud_service.models.pydantic_.html#book_crud_service.models.pydantic_.review.ReviewUpdateModel" title="book_crud_service.models.pydantic_.review.ReviewUpdateModel"><span class="pre">ReviewUpdateModel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="book_crud_service.models.sqlalchemy.html#book_crud_service.models.sqlalchemy.review.Review" title="book_crud_service.models.sqlalchemy.review.Review"><span class="pre">Review</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference internal" href="_modules/book_crud_service/service/review_service.html#ReviewService.update_review"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#book_crud_service.service.review_service.ReviewService.update_review" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-book_crud_service.service">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-book_crud_service.service" title="Link to this heading">¶</a></h2>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Book CRUD Service</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="book_crud_service.html">book_crud_service package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="book_crud_service.html#subpackages">Subpackages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="book_crud_service.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="book_crud_service.html#module-book_crud_service.db">book_crud_service.db module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="book_crud_service.html#module-book_crud_service.main">book_crud_service.main module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="book_crud_service.html#module-book_crud_service">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="book_crud_service.html">book_crud_service package</a><ul>
+      <li>Previous: <a href="book_crud_service.rest.openapi.html" title="previous chapter">book_crud_service.rest.openapi package</a></li>
+      <li>Next: <a href="book_crud_service.temp.html" title="next chapter">book_crud_service.temp package</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, Manish Lalwani.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.4.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="_sources/book_crud_service.service.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

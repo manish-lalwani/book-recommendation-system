@@ -1,0 +1,229 @@
+openapi: 3.0.0
+info:
+  title: Book Management API
+  version: 1.0.0
+servers:
+- url: /api/v1
+paths:
+  /test:
+    get:
+      summary: Test request handling
+      operationId: book_crud_service.rest.api.book_controller.test_request
+      responses:
+        '200':
+          description: Request received
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  method:
+                    type: string
+  /books:
+    post:
+      summary: Add a new book
+      operationId: book_crud_service.rest.api.book_controller.create_book
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BookModel'
+      responses:
+        '201':
+          description: Book created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BookModel'
+    get:
+      summary: Get all books
+      operationId: book_crud_service.rest.api.book_controller.get_all_books
+      responses:
+        '200':
+          description: A list of books
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BookModel'
+  /books/{id}:
+    get:
+      summary: Get a specific book by its ID
+      operationId: book_crud_service.rest.api.book_controller.get_book_by_id
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Book details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BookModel'
+    put:
+      summary: Update a book by its ID
+      operationId: book_crud_service.rest.api.book_controller.update_book
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BookModel'
+      responses:
+        '200':
+          description: Book updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BookModel'
+    delete:
+      summary: Delete a book by its ID
+      operationId: book_crud_service.rest.api.book_controller.delete_book
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Book deleted
+
+  /books/{id}/reviews:
+    post:
+      summary: Add a review for a book
+      operationId: book_crud_service.rest.api.review_controller.create_review
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReviewModel'
+      responses:
+        '201':
+          description: Review created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReviewModel'
+    get:
+      summary: Get all reviews for a book
+      operationId: book_crud_service.rest.api.review_controller.get_all_reviews
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: A list of reviews
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ReviewModel'
+
+  /reviews/{review_id}:
+    put:
+      summary: Update a review by its ID
+      operationId: book_crud_service.rest.api.review_controller.update_review
+      parameters:
+        - name: review_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReviewModel'
+      responses:
+        '200':
+          description: Review updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReviewModel'
+    delete:
+      summary: Delete a review by its ID
+      operationId: book_crud_service.rest.api.review_controller.delete_review
+      parameters:
+        - name: review_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Review deleted
+
+components:
+  schemas:
+    BookModel:
+      type: object
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        author:
+          type: string
+        genre:
+          type: string
+        year_published:
+          type: integer
+        summary:
+          type: string
+        created_by:
+          type: string
+        created_on:
+          type: string
+          format: date-time
+        last_modified_by:
+          type: string
+        last_modified_on:
+          type: string
+          format: date-time
+
+    ReviewModel:
+      type: object
+      properties:
+        id:
+          type: integer
+        book_id:
+          type: integer
+        user_id:
+          type: integer
+        review_text:
+          type: string
+        rating:
+          type: integer
+        created_by:
+          type: string
+        created_on:
+          type: string
+          format: date-time
+        last_modified_by:
+          type: string
+        last_modified_on:
+          type: string
+          format: date-time
